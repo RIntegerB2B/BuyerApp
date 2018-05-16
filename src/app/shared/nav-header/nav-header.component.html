@@ -4,21 +4,20 @@
     aria-label="Toggle navigation" (click)="toggleMenu()">
     <span class="navbar-toggler-icon"></span>
   </button>
- 
+
   <div class="collapse navbar-collapse" id="appNavigation" [ngbCollapse]="isCollapsed">
     <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link" routerLink="" routerLinkActive="active">Home</a>
       <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">About</a>
-      <div class="nav-item dropdown" ngbDropdown>
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" ngbDropdownToggle>
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="dropdownBasic1">
-          <button class="dropdown-item">Action - 1</button>
-          <button class="dropdown-item">Another Action</button>
-          <button class="dropdown-item">Something else is here</button>
+      <div ngbDropdown class="nav-item dropdown">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Men</button>
+        <div class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">Topwear</button>
+          <button class="dropdown-item">Bottomwear</button>
+          <button class="dropdown-item">Footwear</button>
         </div>
       </div>
     </div>
   </div>
 </nav>
+
