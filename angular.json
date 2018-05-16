@@ -26,7 +26,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+                "../buyer-app/node_modules/jquery/dist/jquery.min.js",
+                "../buyer-app/node_modules/bootstrap/dist/js/bootstrap.min.js"
+                ]
           },
           "configurations": {
             "production": {

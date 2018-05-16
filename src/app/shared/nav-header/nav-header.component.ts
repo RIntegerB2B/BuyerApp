@@ -6,13 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-header.component.css']
 })
 export class NavHeaderComponent implements OnInit {
-  isCollapsed: Boolean = true;
+  isMainCollapsed: Boolean = true;
+  isMenMenuCollapsed: Boolean = true;
   constructor() { }
 
   ngOnInit() {
   }
-  toggleMenu() {
-     this.isCollapsed = !this.isCollapsed;
-   }
+  toggleMainMenu() {
+    this.isMainCollapsed = !this.isMainCollapsed;
+  }
+
+  toggleMenMenu() {
+    this.isMenMenuCollapsed = !this.isMenMenuCollapsed;
+  }
 
 }
