@@ -1,7 +1,7 @@
 {
   "index": "/index.html",
   "assetGroups": [{
-    "name": "app",
+    "name": "Buyer",
     "installMode": "prefetch",
     "resources": {
       "files": [
