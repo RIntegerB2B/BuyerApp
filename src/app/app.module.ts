@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -32,6 +33,7 @@ import { WelcomeComponent } from './home/welcome/welcome.component';
     HttpClientModule,      // (Required) for share counts
     HttpClientJsonpModule, // (Optional) For Tumblr counts
     RouterModule,
+    AngularFontAwesomeModule,
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
