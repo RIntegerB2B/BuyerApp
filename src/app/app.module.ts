@@ -17,12 +17,16 @@ import { Routing } from './app.route';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { WelcomeComponent } from './home/welcome/welcome.component';
+import { RegistrationComponent } from './account/registration/registration.component';
+import { SignInComponent } from './account/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavHeaderComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    RegistrationComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
