@@ -1,0 +1,19 @@
+.link {
+    padding: 40px;
+    margin: auto;
+  }
+  
+  .signInMasterDiv {
+    width: 70%;
+    background: #FFF;
+    padding-bottom: 40px;
+    margin: 80px auto;
+    position: relative;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  @media screen and (max-width: 992px) {
+    .signInMasterDiv {
+      width: 90%;
+    }
+  }

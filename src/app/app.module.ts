@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { AccountService } from '../app/account/account.service'; 
 
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -11,6 +12,7 @@ import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {NavHeaderComponent} from './shared/nav-header/nav-header.component';
+import { NavHeaderService } from './shared/nav-header/nav-header.service';
 import { Routing } from './app.route';
 
 
@@ -19,6 +21,8 @@ import { environment } from '../environments/environment';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { RegistrationComponent } from './account/registration/registration.component';
 import { SignInComponent } from './account/sign-in/sign-in.component';
+import { PwdChangeRequestComponent } from './account/pwd-change-request/pwd-change-request.component';
+import { PwdChangeResetComponent } from './account/pwd-change-reset/pwd-change-reset.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { SignInComponent } from './account/sign-in/sign-in.component';
     NavHeaderComponent,
     WelcomeComponent,
     RegistrationComponent,
-    SignInComponent
+    SignInComponent,
+    PwdChangeRequestComponent,
+    PwdChangeResetComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,7 @@ import { SignInComponent } from './account/sign-in/sign-in.component';
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [AccountService, NavHeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

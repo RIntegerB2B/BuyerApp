@@ -1,0 +1,48 @@
+<form [formGroup]="resetPasswordForm" (ngSubmit)="resetSubmit(resetPasswordForm)" novalidate style="padding-top:60px">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="">
+          <div class="form-group">
+            <input class="form-control required" required placeholder="Enter new password" formControlName="newPassword" type="password">
+            <div *ngIf="resetPasswordForm.controls['newPassword'].errors
+                               && !resetPasswordForm.controls['newPassword'].pristine" class="alert alert-danger">
+              <div [hidden]="!resetPasswordForm.controls['newPassword'].errors.required">New Password is required.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input class="form-control required" required placeholder="Re-type new password" formControlName="confirmPassword" type="password">
+            <div *ngIf="resetPasswordForm.controls['confirmPassword'].errors
+                             && !resetPasswordForm.controls['confirmPassword'].pristine" class="alert alert-danger">
+              <div [hidden]="!resetPasswordForm.controls['confirmPassword'].errors.required">
+                Password is required.
+              </div>
+            </div>
+          </div>
+          <input class="btn btnPink btn-block" value="CHANGE PASSWORD" type="submit" [disabled]='!resetPasswordForm.valid'>
+        </div>
+        <div *ngIf="urlnomorevalid">
+
+          <div class="center">
+            <p>
+              <b>The URL is no more valid</b>
+            </p>
+          </div>
+        </div>
+        <div *ngIf="error">
+
+          <div class="center">
+            <h2> <div *ngIf="error">
+
+              <div class="center">
+                <h2>Something went wrong, please try again after some time.</h2>
+                
+              </div>
+              </div></h2>
+            
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</form>
