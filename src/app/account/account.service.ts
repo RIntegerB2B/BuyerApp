@@ -56,12 +56,11 @@ export class AccountService {
         );
     }
 
-    Registration(formRegist: Registration): Observable<any> {
-        const pwResUrl = '/user';
-      var  x= this.http.post(this.serviceUrl + pwResUrl, formRegist, this.requestOptions).pipe(
+    registration(formRegist: Registration): Observable<any> {
+        const regUrl = 'user/';
+    return this.http.post(this.serviceUrl + regUrl, formRegist, this.requestOptions).pipe(
             tap((response: Response) => console.log(response)),
-            catchError(this.handleError<Registration>('registration'))
-          );
-    return x;
+            catchError(this.handleError<Registration>('regist'))
+          )
     }
 }

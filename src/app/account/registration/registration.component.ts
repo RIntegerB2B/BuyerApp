@@ -69,13 +69,13 @@ export class RegistrationComponent implements OnInit {
       buyerRegisterForm.controls.emailId.value,
       buyerRegisterForm.controls.mobileNumber.value,
       buyerRegisterForm.controls.userName.value,
-      buyerRegisterForm.controls.password.value,
+      buyerRegisterForm.controls.password.value
     );
     
-    this.accountService.Registration(this.userModel).subscribe(data => {
-      if (data._body.length > 0) {
+    this.accountService.registration(this.userModel).subscribe(data => {
+     /*  if (data._body.length > 0) {
         this.router.navigate(['/signin']);
-      }
+      } */
     }, error => {
       console.log(error);
     });
