@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { AccountService } from '../app/account/account.service'; 
+import { AccountService } from '../app/account/account.service';
 
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -24,6 +24,8 @@ import { SignInComponent } from './account/sign-in/sign-in.component';
 import { PwdChangeRequestComponent } from './account/pwd-change-request/pwd-change-request.component';
 import { PwdChangeResetComponent } from './account/pwd-change-reset/pwd-change-reset.component';
 
+import { CatalogComponent } from './product/catalog/catalog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { PwdChangeResetComponent } from './account/pwd-change-reset/pwd-change-r
     RegistrationComponent,
     SignInComponent,
     PwdChangeRequestComponent,
-    PwdChangeResetComponent
+    PwdChangeResetComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule,
