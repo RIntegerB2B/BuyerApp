@@ -1,67 +1,59 @@
-<form [formGroup]="viewCatalogForm" novalidate style="padding-top:60px">
+<form [formGroup]="viewProductForm" novalidate style="padding-top:60px">
   <div class="container-fluid">
     <div class="row">
-
       <div class="col-md-8 mx-auto">
-
         <div class="container-fluid">
           <div class="row">
-
             <div class="col-md-3">
               <div class="form-group">
-                <label>Catalog</label>
+                <label>Product </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Product Name</label>
+                </div>
               </div>
             </div>
 
             <div class="col-md-3">
               <div class="form-group">
-                <label>Catalog Name</label>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Category type</label>
+                <label>Prize</label>
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 ">
               <div class="form-group">
-                <label>Material</label>
+                <label>Size Description</label>
               </div>
             </div>
 
           </div>
         </div>
         <div class="container">
-          <div class="row" *ngFor="let catalog of catalogs">
-            <input class="form-control" type="text" hidden formControlName="catId" [value]="catalog._id" #catalogId>
+          <div class="row" *ngFor="let catalog of Products?.products">
+            <!--  <input class="form-control" type="text" hidden formControlName="productId" [value]="catalog._id" #productId/> -->
             <div class="col-md-3 form-group">
-              <button class="btn btn-success pull-right" (click)="getProduct(viewCatalogForm,catalogId)">
-                <img [src]="this.catalog?.catalogImageName" style="width: 180px; height: 145px;" />
-              </button>
-            </div>
-
-
-            <div class="col-md-3 form-group">
-              {{catalog.catalogName}}
+              <img [src]="this.catalog?.productImageName" style="width: 180px; height: 145px;" />
             </div>
 
             <div class="col-md-3 form-group">
-              {{catalog.catalogType}}
+              {{catalog.productName}}
             </div>
 
             <div class="col-md-3 form-group">
-              {{catalog.material}}
+              {{catalog.price}}
+            </div>
+
+            <div class="col-md-3 form-group">
+              {{catalog.sizeDescription}}
             </div>
 
 
 
           </div>
-
         </div>
-
-
-
       </div>
     </div>
   </div>

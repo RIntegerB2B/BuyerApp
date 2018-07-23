@@ -3,7 +3,7 @@ import { FormArray, FormBuilder, FormGroup, Validators, NgForm } from '@angular/
 import { Router } from '@angular/router';
 import { NavHeaderService } from '../../shared/nav-header/nav-header.service';
 import { ProductService } from '../product.service';
-import { Catalog} from './catalog.model';
+import { Catalog } from './catalog.model';
 
 @Component({
   selector: 'app-catalog',
@@ -14,26 +14,35 @@ export class CatalogComponent implements OnInit {
 
   catalogs: Catalog[] = [];
   viewCatalogForm: FormGroup;
+  id;
   constructor(private fb: FormBuilder, private router: Router, private productService: ProductService,
     private navHeaderService: NavHeaderService) { }
 
   ngOnInit() {
     this.navHeaderService.hideMenuTransparent();
     this.catalog();
+    this.createForm();
   }
 
   createForm() {
     this.viewCatalogForm = this.fb.group({
-      catalogId: ['']
+      catId: ['']
     });
   }
   catalog() {
     this.productService.findCatalog().subscribe(data => {
       this.catalogs = data;
-      console.log( this.catalogs);
-      console.log ();
+      console.log(this.catalogs);
+      console.log();
     }, error => {
       console.log(error);
     });
   }
+
+  getProduct(viewCatalogForm: FormGroup, catalogID: any) {
+    this.id = catalogID.value;
+    /* console.log(this.id); */
+    this.router.navigate(['/Product', this.id]);
+  }
+
 }
