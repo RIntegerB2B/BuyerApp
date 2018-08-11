@@ -23,6 +23,7 @@ import { RegistrationComponent } from './account/registration/registration.compo
 import { SignInComponent } from './account/sign-in/sign-in.component';
 import { PwdChangeRequestComponent } from './account/pwd-change-request/pwd-change-request.component';
 import { PwdChangeResetComponent } from './account/pwd-change-reset/pwd-change-reset.component';
+import { SubProductComponent } from './product/sub-product/sub-product.component';
 
 import { CatalogComponent } from './product/catalog/catalog.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,6 +33,17 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
+    NavHeaderComponent,
+    WelcomeComponent,
+    RegistrationComponent,
+    SignInComponent,
+    PwdChangeRequestComponent,
+    PwdChangeResetComponent,
+    CatalogComponent,
+    SubProductComponent
+  ],
+  imports: [
+    BrowserModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatCardModule,
@@ -40,16 +52,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    NavHeaderComponent,
-    WelcomeComponent,
-    RegistrationComponent,
-    SignInComponent,
-    PwdChangeRequestComponent,
-    PwdChangeResetComponent,
-    CatalogComponent
-  ],
-  imports: [
-    BrowserModule,
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
