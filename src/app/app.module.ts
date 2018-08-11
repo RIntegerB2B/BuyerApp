@@ -25,10 +25,21 @@ import { PwdChangeRequestComponent } from './account/pwd-change-request/pwd-chan
 import { PwdChangeResetComponent } from './account/pwd-change-reset/pwd-change-reset.component';
 
 import { CatalogComponent } from './product/catalog/catalog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
     NavHeaderComponent,
     WelcomeComponent,
     RegistrationComponent,
