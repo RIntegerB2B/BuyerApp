@@ -28,6 +28,8 @@ import { SubProductComponent } from './product/sub-product/sub-product.component
 
 import { CatalogComponent } from './product/catalog/catalog.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { ThanksComponent } from './home/thanks/thanks.component';
+import { ContactComponent } from './home/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { FooterComponent } from './home/footer/footer.component';
     PwdChangeResetComponent,
     CatalogComponent,
     FooterComponent,
-    SubProductComponent
+    SubProductComponent,
+    ThanksComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

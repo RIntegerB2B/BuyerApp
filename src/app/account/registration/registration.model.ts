@@ -1,18 +1,20 @@
 export class Registration {
     name: String;
-    location: String;
     mobileNumber: Number;
+    location: String;
     userType: String;
     constructor(
         name: String,
-        userType: String,
+        mobileNumber: Number,
         location: String,
-        mobileNumber: Number)
+        userType: String
+        )
         {
             this.name=name;
+            this.mobileNumber=mobileNumber;
             this.location=location;
             this.userType=userType;
-            this.mobileNumber=mobileNumber;
+            
         }
     
 }

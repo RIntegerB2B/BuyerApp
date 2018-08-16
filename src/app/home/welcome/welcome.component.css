@@ -21,3 +21,8 @@
     @media screen and (max-width: 992px) { 
         
 }
+.carousel slide .carousel-control-next-icon
+  {
+    background-image:url(./../../../assets/images/arrow.png);
+    
+  }

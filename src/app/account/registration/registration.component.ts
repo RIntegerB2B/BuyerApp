@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Registration} from './registration.model'
 import { trigger, style, animate, transition } from '@angular/animations';
 import {state} from '@angular/animations';
-
+import { mobileNumber } from './validation';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -37,6 +37,7 @@ export class RegistrationComponent implements OnInit {
 
   buyerRegisterForm: FormGroup;
   userModel: Registration;
+  userTypes = ['Agent', 'Retail', 'Others'];
   /* public state = 'inactive'; */
 
   constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router) { }
@@ -52,8 +53,8 @@ export class RegistrationComponent implements OnInit {
   buyerRegister() { 
     this.buyerRegisterForm = this.fb.group({
       name: ['', Validators.required],
+      mobileNumber: ['', mobileNumber],
       location: ['', Validators.required],
-      mobileNumber: ['', Validators.required],
       userType: ['', Validators.required]
     });
   }
@@ -61,15 +62,16 @@ export class RegistrationComponent implements OnInit {
     // TODO: Change the userModel variable to pwdChangeReset
     this.userModel = new Registration(
       buyerRegisterForm.controls.name.value,
+      buyerRegisterForm.controls.mobileNumber.value,
       buyerRegisterForm.controls.location.value,
-      buyerRegisterForm.controls.userType.value,
-      buyerRegisterForm.controls.mobileNumber.value
+      buyerRegisterForm.controls.userType.value
+      
     );
     
     this.accountService.registration(this.userModel).subscribe(data => {
-     /*  if (data._body.length > 0) {
-        this.router.navigate(['/signin']);
-      } */
+       if (data._body.length > 0) {
+        this.router.navigate(['/thanks']);
+      } 
     }, error => {
       console.log(error);
     });
