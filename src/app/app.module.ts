@@ -5,8 +5,7 @@ import { FormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AccountService } from '../app/account/account.service';
-import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatMenuModule, MatGridListModule } from '@angular/material';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -25,6 +24,7 @@ import { RegistrationComponent } from './account/registration/registration.compo
 import { SignInComponent } from './account/sign-in/sign-in.component';
 import { PwdChangeRequestComponent } from './account/pwd-change-request/pwd-change-request.component';
 import { PwdChangeResetComponent } from './account/pwd-change-reset/pwd-change-reset.component';
+import { SubProductComponent } from './product/sub-product/sub-product.component';
 
 import { CatalogComponent } from './product/catalog/catalog.component';
 import { FooterComponent } from './home/footer/footer.component';
@@ -39,10 +39,20 @@ import { FooterComponent } from './home/footer/footer.component';
     PwdChangeRequestComponent,
     PwdChangeResetComponent,
     CatalogComponent,
-    FooterComponent
+    FooterComponent,
+    SubProductComponent
   ],
   imports: [
     BrowserModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
@@ -55,7 +65,6 @@ import { FooterComponent } from './home/footer/footer.component';
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
     NgbModule.forRoot(),
-    MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatMenuModule, MatTabsModule, MatGridListModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AccountService, NavHeaderService],

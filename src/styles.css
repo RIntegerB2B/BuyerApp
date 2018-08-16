@@ -3,4 +3,4 @@
 @import "./assets/styles/bootstrapOverride.css";
 @import "./assets/styles/angularStyle.css";
 @import "./assets/styles/commonStyle.css";
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
