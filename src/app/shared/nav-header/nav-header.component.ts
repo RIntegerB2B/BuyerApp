@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavHeaderComponent implements OnInit {
   isMainCollapsed: Boolean = true;
   isMenMenuCollapsed: Boolean = true;
+  toggleBar = 'colapseMenuBar';
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +19,9 @@ export class NavHeaderComponent implements OnInit {
 
   toggleMenMenu() {
     this.isMenMenuCollapsed = !this.isMenMenuCollapsed;
+  }
+  collapseMenu() {
+    this.toggleBar = this.toggleBar === 'colapseMenuBar' ? 'expandMenuBar' : 'colapseMenuBar';
   }
 
 }

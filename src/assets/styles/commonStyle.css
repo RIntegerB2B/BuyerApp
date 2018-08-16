@@ -1,9 +1,10 @@
 html,
 body {
-  height: 100%;
-  background-color: #e9e7e7;
+  
+  background-color:#f7f7f7;
   font-size: 13px;
   font-weight: 500;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .whiteColor {
@@ -18,6 +19,9 @@ body {
   transition: all 1s;
 }
 
+.common a:hover{
+  background-color: #570015;
+}
 .btnPink,
 .btnPink:disabled {
   background-color: #FF527B;

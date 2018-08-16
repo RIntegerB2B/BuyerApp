@@ -1,30 +1,32 @@
-<div class="container-fluid contaonerFluidAdj">
-  <div class="row">
-    <div class="col-12 paddingMarginZero">
-        <ngb-carousel *ngIf="images">
-            <ng-template ngbSlide>
-              <img class="col-12" [src]="images[0]" alt="Random first slide">
-              <div class="carousel-caption">
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
-              <img class="col-12" [src]="images[1]" alt="Random second slide">
-              <div class="carousel-caption">
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
-              <img class="col-12" [src]="images[2]" alt="Random third slide">
-              <div class="carousel-caption">
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </div>
-            </ng-template>
-          </ngb-carousel>
-    </div>
-  </div>
-  </div>
+
   
+    <div class="container-fluid banner">
+      <carousel  [showIndicators]="showIndicator">
+        <slide>
+          <img class="image"  src="./../../assets/images/1.jpg"  alt="first slide" width="100%">
+        </slide>
+        <slide>
+          <img class="image" src="./../../assets/images/2.jpg"  alt="second slide" width="100%">
+        </slide>
+        <slide>
+          <img class="image" src="./../../assets/images/3.jpg"  alt="third slide" width="100%">
+        </slide>
+      </carousel>
+      </div>
+      <div class="container-fluid" style="margin-top:5px;" >
+          <div class="row">
+            <div class="col-md-12">
+              <img  class="img-fluid register" usemap="#planetmap" src="./../../assets/images/register.jpg"  alt="third slide" width="100%">
+            </div>
+          </div>
+        </div>
+        <map name="planetmap">
+            <area shape="rect" coords="0,0,991,136" alt="Sun" [routerLink]="['/registration']">
+          </map>
+<div class="container-fluid" style="margin-top:5px;">
+  <div class="row">
+  <div class="col-md-4 col-sm-4" style="margin-bottom:5px;"><img  class="img-fluid  mx-auto d-block" src="./../../assets/images/drop-banner-1.jpg"  alt="third slide"></div>
+  <div class="col-md-4 col-sm-4" style="margin-bottom:5px;"><img class="img-fluid  mx-auto d-block" src="./../../assets/images/drop banner-2.jpg"  alt="third slide"></div>
+  <div class="col-md-4 col-sm-4" style="margin-bottom:5px;"><img class="img-fluid  mx-auto d-block" src="./../../assets/images/drop-banner-3.jpg"  alt="third slide"></div>
+</div>
+</div>    

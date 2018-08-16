@@ -37,7 +37,7 @@ export class RegistrationComponent implements OnInit {
 
   buyerRegisterForm: FormGroup;
   userModel: Registration;
-  public state = 'inactive';
+  /* public state = 'inactive'; */
 
   constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router) { }
 
@@ -51,25 +51,19 @@ export class RegistrationComponent implements OnInit {
 */
   buyerRegister() { 
     this.buyerRegisterForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      userType: ['', Validators.required],
-      emailId: ['', Validators.required],
+      name: ['', Validators.required],
+      location: ['', Validators.required],
       mobileNumber: ['', Validators.required],
-      userName: ['', Validators.required],
-      password: ['', Validators.required]
+      userType: ['', Validators.required]
     });
   }
   buyerSubmit(buyerRegisterForm: FormGroup) {
     // TODO: Change the userModel variable to pwdChangeReset
     this.userModel = new Registration(
-      buyerRegisterForm.controls.firstName.value,
-      buyerRegisterForm.controls.lastName.value,
+      buyerRegisterForm.controls.name.value,
+      buyerRegisterForm.controls.location.value,
       buyerRegisterForm.controls.userType.value,
-      buyerRegisterForm.controls.emailId.value,
-      buyerRegisterForm.controls.mobileNumber.value,
-      buyerRegisterForm.controls.userName.value,
-      buyerRegisterForm.controls.password.value
+      buyerRegisterForm.controls.mobileNumber.value
     );
     
     this.accountService.registration(this.userModel).subscribe(data => {

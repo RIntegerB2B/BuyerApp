@@ -1,25 +1,18 @@
 export class Registration {
-    firstName: String;
-    lastName: String;
-    userType: Number;
-    emailId: String;
+    name: String;
+    location: String;
     mobileNumber: Number;
-    userName: String;
-    password: String;
+    userType: String;
     constructor(
-        firstName: String,
-        lastName: String,
-        userType: Number,
-        emailId: String,
-        mobileNumber: Number,
-        userName: string,
-        password: string,) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userType = userType;
-        this.emailId = emailId;
-        this.mobileNumber = mobileNumber;
-        this.userName = userName;
-        this.password = password;
-    }
+        name: String,
+        userType: String,
+        location: String,
+        mobileNumber: Number)
+        {
+            this.name=name;
+            this.location=location;
+            this.userType=userType;
+            this.mobileNumber=mobileNumber;
+        }
+    
 }
