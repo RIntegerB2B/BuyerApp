@@ -4,3 +4,4 @@
 @import "./assets/styles/angularStyle.css";
 @import "./assets/styles/commonStyle.css";
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~material-icons/iconfont/material-icons.css";
