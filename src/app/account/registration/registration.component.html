@@ -1,5 +1,5 @@
 <div class="registrationMasterDiv" style="margin-bottom: 100px;">
-  <form [formGroup]="buyerRegisterForm" (ngSubmit)="buyerSubmit(buyerRegisterForm)" novalidate style="padding-top:60px">
+  <form [formGroup]="buyerRegisterForm" (ngSubmit)="buyerRegisterForm.valid &&buyerSubmit(buyerRegisterForm)" novalidate style="padding-top:60px">
     <div class="container-fluid ">
       <div class="row">
   <div class="col-md-6 card text-center  mx-auto">
@@ -35,14 +35,10 @@
      </div>
     <div class="form-group">
       <mat-form-field class="example-full-width">
-       <input matInput placeholder="Location" maxlength="20" formControlName="location" required>
+       <input matInput placeholder="Location" maxlength="20" formControlName="location" [required]="false">
        <button mat-button  matSuffix mat-icon-button aria-label="Location">
            <mat-icon>location_on</mat-icon>
          </button>
-       <mat-error *ngIf="buyerRegisterForm.controls['location'].errors?.required">
-      Location is
-         <strong>required</strong>
-       </mat-error>
      </mat-form-field>
     </div>  
     <div class="form-group">
@@ -53,14 +49,18 @@
               </mat-option>
             </mat-select>
             <mat-error *ngIf="buyerRegisterForm.controls['userType'].errors?.required">
-                User Type is
-                <strong>required</strong>
-              </mat-error>
+                UserType is
+                 <strong>required</strong>
+               </mat-error>
           </mat-form-field>
     </div> 
+    
+    
     <div>
-    <button mat-raised-button [disabled]="!buyerRegisterForm.valid" color="primary">register</button>
-  </div><br>
+        <button   mat-raised-button color="primary">register</button>
+    </div>
+    
+  <br>
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@ export class RegistrationComponent implements OnInit {
 
   buyerRegisterForm: FormGroup;
   userModel: Registration;
-  userTypes = ['Agent', 'Retail', 'Others'];
+  userTypes = ['Agent', 'Retailer', 'Wholesaler', 'Distributor', 'Others'];
   /* public state = 'inactive'; */
 
   constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router) { }
@@ -52,10 +52,10 @@ export class RegistrationComponent implements OnInit {
 */
   buyerRegister() { 
     this.buyerRegisterForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', Validators.minLength(3)],
       mobileNumber: ['', mobileNumber],
-      location: ['', Validators.required],
-      userType: ['', Validators.required]
+      location: [''],
+      userType: ['']
     });
   }
   buyerSubmit(buyerRegisterForm: FormGroup) {
@@ -69,9 +69,13 @@ export class RegistrationComponent implements OnInit {
     );
     
     this.accountService.registration(this.userModel).subscribe(data => {
-       if (data._body.length > 0) {
+      var value = data._body;
+      if (value.indexOf("1")) {
+        // The Update is success so navigate to Login page
         this.router.navigate(['/thanks']);
-      } 
+      }
+      
+       
     }, error => {
       console.log(error);
     });
