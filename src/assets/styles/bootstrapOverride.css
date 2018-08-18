@@ -4,6 +4,8 @@
 
 .bg-primary{
     background-color: #5273ba !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .alert{
