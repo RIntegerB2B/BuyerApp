@@ -16,5 +16,4 @@ export class Registration {
             this.userType=userType;
             
         }
-    
 }
