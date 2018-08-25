@@ -11,16 +11,16 @@ import { NavHeaderService } from '../../shared/nav-header/nav-header.service';
   styleUrls: ['./pwd-change-reset.component.css']
 })
 export class PwdChangeResetComponent implements OnInit {
-  resetPasswordForm: FormGroup; 
+  resetPasswordForm: FormGroup;
   userModel: PwdChangeReset;
   emailKey: string;
   
-  urlnomorevalid :boolean=false;
-  error :boolean=false;
+  urlnomorevalid: Boolean = false;
+  error: Boolean = false;
 
   constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router,
     private navHeaderService: NavHeaderService) {
-    this.emailKey = "xyz"; // TODO: This value has to be pulled from Query String
+    this.emailKey = 'xyz'; // TODO: This value has to be pulled from Query String
 
   }
 

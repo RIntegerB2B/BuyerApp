@@ -8,10 +8,7 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  showIndicators=false;
+  showIndicators = false;
   ngOnInit() {
   }
-
-  
-
 }

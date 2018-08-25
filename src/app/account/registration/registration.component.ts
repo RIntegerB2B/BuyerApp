@@ -50,7 +50,7 @@ export class RegistrationComponent implements OnInit {
     this.state = this.state === 'active' ? 'inactive' : 'active';
   }
 */
-  buyerRegister() { 
+  buyerRegister() {
     this.buyerRegisterForm = this.fb.group({
       name: ['', Validators.minLength(3)],
       mobileNumber: ['', mobileNumber],
@@ -65,17 +65,13 @@ export class RegistrationComponent implements OnInit {
       buyerRegisterForm.controls.mobileNumber.value,
       buyerRegisterForm.controls.location.value,
       buyerRegisterForm.controls.userType.value
-      
     );
-    
     this.accountService.registration(this.userModel).subscribe(data => {
-      var value = data._body;
-      if (value.indexOf("1")) {
+      const value = data._body;
+      if (value.indexOf('1')) {
         // The Update is success so navigate to Login page
         this.router.navigate(['/thanks']);
       }
-      
-       
     }, error => {
       console.log(error);
     });

@@ -7,6 +7,7 @@ import {PwdChangeResetComponent} from './account/pwd-change-reset/pwd-change-res
 import {CatalogComponent} from './product/catalog/catalog.component';
 import {ThanksComponent} from './home/thanks/thanks.component';
 import {ContactComponent} from './home/contact/contact.component';
+import {SubProductComponent} from './product/sub-product/sub-product.component';
 const routes: Routes = [
     { path: 'Welcome', component: WelcomeComponent },
     { path: 'registration', component: RegistrationComponent },
@@ -14,10 +15,11 @@ const routes: Routes = [
     { path: 'contact', component: ContactComponent },
     { path: 'SignIn', component: SignInComponent },
     { path: 'PwdChangeReq', component: PwdChangeRequestComponent },
-    {path: 'PwdChangeReset', component: PwdChangeResetComponent},
-    {path: 'Catalog', component: CatalogComponent},
+    { path: 'PwdChangeReset', component: PwdChangeResetComponent },
+    { path: 'Catalog', component: CatalogComponent },
+    { path: 'Product/:id', component: SubProductComponent },
     { path: '', redirectTo: 'Welcome', pathMatch: 'full' },
     { path: '**', redirectTo: 'Welcome', pathMatch: 'full' }
 ];
 
-export const Routing = RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'});
+export const Routing = RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' });

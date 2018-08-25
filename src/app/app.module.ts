@@ -5,7 +5,8 @@ import { FormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AccountService } from '../app/account/account.service';
-import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule,
+   MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
@@ -14,6 +15,7 @@ import { HttpClientModule, HttpClientJsonpModule  } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {NavHeaderComponent} from './shared/nav-header/nav-header.component';
 import { NavHeaderService } from './shared/nav-header/nav-header.service';
+import { ProductService} from './product/product.service';
 import { Routing } from './app.route';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CarouselModule } from 'ngx-bootstrap';
@@ -30,6 +32,7 @@ import { CatalogComponent } from './product/catalog/catalog.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
 import { ContactComponent } from './home/contact/contact.component';
+
 
 @NgModule({
   declarations: [
@@ -61,8 +64,8 @@ import { ContactComponent } from './home/contact/contact.component';
     FormsModule,
     HttpModule,
     Routing,
-    HttpClientModule,      // (Required) for share counts
-    HttpClientJsonpModule, // (Optional) For Tumblr counts
+    HttpClientModule,
+    HttpClientJsonpModule,
     RouterModule,
     AngularFontAwesomeModule,
     FlexLayoutModule,
@@ -71,7 +74,7 @@ import { ContactComponent } from './home/contact/contact.component';
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [AccountService, NavHeaderService],
+  providers: [AccountService, ProductService, NavHeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

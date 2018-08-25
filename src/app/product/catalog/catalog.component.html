@@ -4,7 +4,7 @@
 
       <div class="col-md-8 mx-auto">
 
-        <div class="container-fluid">
+        <!--<div class="container-fluid">
           <div class="row">
 
             <div class="col-md-3">
@@ -24,37 +24,49 @@
               </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
               <div class="form-group">
                 <label>Material</label>
               </div>
             </div>
 
           </div>
-        </div>
+        </div> -->
         <div class="container">
           <div class="row" *ngFor="let catalog of catalogs">
             <input class="form-control" type="text" hidden formControlName="catId" [value]="catalog._id" #catalogId>
-            <div class="col-md-3 form-group">
-              <button class="btn btn-success pull-right" (click)="getProduct(viewCatalogForm,catalogId)">
-                <img [src]="this.catalog?.catalogImageName" style="width: 180px; height: 145px;" />
-              </button>
+            <div class="row col-md-4 form-group">
+            <div class="col-md-6 form-group">
+              <a >
+                <img [src]="this.catalog?.catalogImageName" style="width: 90; height: 145px;" />
+              </a>
             </div>
 
 
             <div class="col-md-3 form-group">
               {{catalog.catalogName}}
             </div>
+            </div>
 
-            <div class="col-md-3 form-group">
+            <div class="row col-md-4 form-group">
+            <div class="col-md-6 form-group">
               {{catalog.catalogType}}
             </div>
 
-            <div class="col-md-3 form-group">
+            <div class="col-md-6 form-group">
               {{catalog.material}}
             </div>
+            </div>
 
+            <div class="row col-md-4    form-group">
+            <div class="col-md-6  form-group">
+              <input type="submit" class="btn btn-primary" value="view products" (click)="getProduct(viewCatalogForm,catalogId)">
+             </div>
 
+             <div class="col-md-6  form-group">
+              <input type="submit" class="btn btn-success" value="share" >
+             </div>
+             </div>
 
           </div>
 
