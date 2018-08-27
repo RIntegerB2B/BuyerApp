@@ -8,6 +8,7 @@ import {CatalogComponent} from './product/catalog/catalog.component';
 import {ThanksComponent} from './home/thanks/thanks.component';
 import {ContactComponent} from './home/contact/contact.component';
 import {SubProductComponent} from './product/sub-product/sub-product.component';
+import {SubProductViewComponent} from './product/sub-product-view/sub-product-view.component';
 const routes: Routes = [
     { path: 'Welcome', component: WelcomeComponent },
     { path: 'registration', component: RegistrationComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
     { path: 'PwdChangeReset', component: PwdChangeResetComponent },
     { path: 'Catalog', component: CatalogComponent },
     { path: 'Product/:id', component: SubProductComponent },
+    { path: 'Catalog/:id/Product/:productId', component: SubProductViewComponent},
     { path: '', redirectTo: 'Welcome', pathMatch: 'full' },
     { path: '**', redirectTo: 'Welcome', pathMatch: 'full' }
 ];

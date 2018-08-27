@@ -39,4 +39,11 @@ export class ProductService {
     return this.httpClient.get<Catalog[]>(url);
 
   }
+  getProduct(id, productId): Observable<any> {
+    const calatalogUrl = 'catalog/';
+    const productUrl = '/product/';
+    const url: string = this.serviceUrl + calatalogUrl + id + productUrl + productId;
+    return this.httpClient.get<Catalog[]>(url);
+
+  }
 }

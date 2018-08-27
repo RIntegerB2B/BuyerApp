@@ -1,22 +1,20 @@
-<form [formGroup]="viewProductForm" novalidate style="padding-top:60px">
+<form [formGroup]="viewProductDetailForm" novalidate style="padding-top:60px">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8 mx-auto">
         <div class="container-fluid">
           <div class="row">
-              <div class="row col-md-4 form-group">
-            <div class="col-md-6">
+            <div class="col-md-3">
               <div class="form-group">
                 <label>Product </label>
               </div>
             </div>
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-3">
                 <div class="form-group">
                   <label>Product Name</label>
                 </div>
               </div>
-            </div>
             </div>
 
             <div class="col-md-3">
@@ -34,10 +32,10 @@
           </div>
         </div>
         <div class="container">
-          <div class="row" *ngFor="let product of Products?.products">
-             <input class="form-control" type="text" hidden formControlName="productId" [value]="product._id" #productId/>
+          <div class="row" *ngFor="let product of Products">
+            <!--  <input class="form-control" type="text" hidden formControlName="productId" [value]="product._id" #productId/> -->
             <div class="col-md-3 form-group">
-              <img [src]="this.product?.productImageName"  (click)="getProduct(viewProductForm,productId)" style="width: 90px; height: 145px;" />
+              <img [src]="this.product?.productImageName"  style="width: 90px; height: 145px;" />
             </div>
 
             <div class="col-md-3 form-group">

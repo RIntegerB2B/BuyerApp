@@ -4,6 +4,7 @@ import { NavHeaderService } from '../../shared/nav-header/nav-header.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Catalogs } from './catalog.model';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,10 +18,11 @@ export class SubProductComponent implements OnInit {
   Products: Catalogs;
   catId;
   viewProductForm: FormGroup;
+  product;
 
   constructor(private fb: FormBuilder,
     private productService: ProductService, private navHeaderService: NavHeaderService,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute, private router: Router) {
     this.catalogId = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(this.catalogId);
   }
@@ -43,5 +45,10 @@ export class SubProductComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+  getProduct(viewProductForm: FormGroup, productId) {
+    this.product = productId.value;
+    console.log(this.product);
+this.router.navigate(['/Catalog', this.catalogId, 'Product', this.product ]);
   }
 }

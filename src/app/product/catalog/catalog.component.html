@@ -1,79 +1,19 @@
-<form [formGroup]="viewCatalogForm" novalidate style="padding-top:60px">
+<form [formGroup]="viewCatalogForm" novalidate style="padding-top:60px; margin-bottom:100px">
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-md-8 mx-auto">
-
-        <!--<div class="container-fluid">
-          <div class="row">
-
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Catalog</label>
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Catalog Name</label>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Category type</label>
-              </div>
-            </div>
-
-            <div class="col-md-2">
-              <div class="form-group">
-                <label>Material</label>
-              </div>
-            </div>
-
-          </div>
-        </div> -->
-        <div class="container">
-          <div class="row" *ngFor="let catalog of catalogs">
-            <input class="form-control" type="text" hidden formControlName="catId" [value]="catalog._id" #catalogId>
-            <div class="row col-md-4 form-group">
-            <div class="col-md-6 form-group">
-              <a >
-                <img [src]="this.catalog?.catalogImageName" style="width: 90; height: 145px;" />
-              </a>
-            </div>
-
-
-            <div class="col-md-3 form-group">
-              {{catalog.catalogName}}
-            </div>
-            </div>
-
-            <div class="row col-md-4 form-group">
-            <div class="col-md-6 form-group">
-              {{catalog.catalogType}}
-            </div>
-
-            <div class="col-md-6 form-group">
-              {{catalog.material}}
-            </div>
-            </div>
-
-            <div class="row col-md-4    form-group">
-            <div class="col-md-6  form-group">
-              <input type="submit" class="btn btn-primary" value="view products" (click)="getProduct(viewCatalogForm,catalogId)">
-             </div>
-
-             <div class="col-md-6  form-group">
-              <input type="submit" class="btn btn-success" value="share" >
-             </div>
-             </div>
-
-          </div>
-
-        </div>
-
-
-
+      <div class="col-md-4  mx-auto" *ngFor="let catalog of catalogs">
+        <input class="form-control" type="text" hidden formControlName="catId" [value]="catalog._id" #catalogId>
+        <a >
+          <mat-card class="example-card">
+            <img [src]="this.catalog?.catalogImageName"  class="image" mat-card-image (click)="getProduct(viewCatalogForm,catalogId)"
+            />
+          </mat-card>
+        </a>
+        {{catalog.catalogName}}<br>
+        <button mat-raised-button color="accent"  style="margin-right:20px" (click)="getProduct(viewCatalogForm,catalogId)">View Products</button>
+        <button mat-raised-button color="accent" >Share</button>
+        <!-- <input mat-raised-button type="submit" mat-button class="btn btn-success" value="share"> -->
       </div>
     </div>
   </div>

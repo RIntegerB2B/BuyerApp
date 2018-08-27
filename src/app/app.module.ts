@@ -32,6 +32,7 @@ import { CatalogComponent } from './product/catalog/catalog.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
 import { ContactComponent } from './home/contact/contact.component';
+import { SubProductViewComponent } from './product/sub-product-view/sub-product-view.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ContactComponent } from './home/contact/contact.component';
     FooterComponent,
     SubProductComponent,
     ThanksComponent,
-    ContactComponent
+    ContactComponent,
+    SubProductViewComponent
   ],
   imports: [
     BrowserModule,
