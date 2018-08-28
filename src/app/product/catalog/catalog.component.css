@@ -3,22 +3,54 @@
         height:300px;
         width: 300px;
         margin-bottom: 15px;
-      
+   
     }
-    
+    .example-card{
+        height:300px;
+        width: 300px;
+    }
+       
 }
 
 @media screen and (min-width: 992px) {
     .image{
-        height:300px;
-        width: 300px;
+        height:200px;
+        width: 200px;
         margin-bottom: 15px;
+      
     }
-    
-
+    .example-card{
+        height:200px;
+        width: 200px;
+    }
 }
 
-.mat-card:hover
-{
-  border:1px solid black;
+.images{
+    margin-right:5%;
+    margin-bottom: 5%;
+    margin-left: 3%;
+    border:1px ridge grey;
+ 
+}
+
+.images:hover{
+    border:1px ridge grey;
+    border-radius: 25px;
+  
+  
+}
+.btn{
+    margin-left:2%;
+}
+button{
+    margin-right:30px; 
+}
+.desc {
+    color: black;
+    text-transform: capitalize;
+    margin-left:10px;
+    font-weight: bold;
+}
+.price{
+    color:red;
 }

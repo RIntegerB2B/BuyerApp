@@ -12,7 +12,7 @@ import { Catalog } from './catalog.model';
 })
 export class CatalogComponent implements OnInit {
 
-  catalogs: Catalog[] = [];
+  catalogs: Catalog;
   viewCatalogForm: FormGroup;
   id;
   constructor(private fb: FormBuilder, private router: Router, private productService: ProductService,
@@ -32,8 +32,7 @@ export class CatalogComponent implements OnInit {
   catalog() {
     this.productService.findCatalog().subscribe(data => {
       this.catalogs = data;
-      console.log(this.catalogs);
-      console.log();
+ console.log(this.catalogs);
     }, error => {
       console.log(error);
     });

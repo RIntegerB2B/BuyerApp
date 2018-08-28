@@ -1,3 +1,5 @@
+import {Product} from './product.model';
+
 export class Catalog {
     _id: string;
     catalogName: string;
@@ -9,6 +11,8 @@ export class Catalog {
     dispatch: string;
     imageType: string;
     catalogImageName: string;
+    products: Product;
+
 
     constructor(
         catalogName: string,
@@ -19,6 +23,7 @@ export class Catalog {
         work: string,
         dispatch: string,
         imageType: string,
+        products: Product
     ) {
         this.catalogName = catalogName;
         this.catalogType = catalogType;
@@ -28,5 +33,6 @@ export class Catalog {
         this.work = work;
         this.dispatch = dispatch;
         this.imageType = imageType;
+        this.products = products;
     }
 }

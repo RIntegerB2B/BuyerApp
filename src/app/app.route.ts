@@ -20,8 +20,8 @@ const routes: Routes = [
     { path: 'Catalog', component: CatalogComponent },
     { path: 'Product/:id', component: SubProductComponent },
     { path: 'Catalog/:id/Product/:productId', component: SubProductViewComponent},
-    { path: '', redirectTo: 'Welcome', pathMatch: 'full' },
-    { path: '**', redirectTo: 'Welcome', pathMatch: 'full' }
+    { path: '', redirectTo: 'Catalog', pathMatch: 'full' },
+    { path: '**', redirectTo: 'Catalog', pathMatch: 'full' }
 ];
 
 export const Routing = RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' });

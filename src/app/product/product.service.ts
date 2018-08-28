@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { AppSetting } from '../config/appSetting';
-import { Catalog } from '.././product/catalog/catalog.model';
+import {Catalog} from './catalog/catalog.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class ProductService {
   findCatalog(): Observable<any> {
     const calatalogUrl = 'catalog';
     const url: string = this.serviceUrl + calatalogUrl;
-    return this.httpClient.get<Catalog[]>(url);
+    return this.httpClient.get<Catalog>(url);
 
   }
 

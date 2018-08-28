@@ -1,60 +1,22 @@
 <form [formGroup]="viewProductForm" novalidate style="padding-top:60px">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <div class="col-md-8 mx-auto">
-        <div class="container-fluid">
-          <div class="row">
-              <div class="row col-md-4 form-group">
-            <div class="col-md-6">
-              <div class="form-group">
-                <label>Product </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Product Name</label>
-                </div>
-              </div>
-            </div>
-            </div>
-
-            <div class="col-md-3">
-              <div class="form-group">
-                <label>Prize</label>
-              </div>
-            </div>
-
-            <div class="col-md-3 ">
-              <div class="form-group">
-                <label>Size Description</label>
-              </div>
-            </div>
-
-          </div>
-        </div>
-        <div class="container">
-          <div class="row" *ngFor="let product of Products?.products">
+     <div class="col-md-12 ">
+          <div class="col-md-4 mx-auto column p-3  images "   *ngFor="let product of Products?.products">
+            <div class="col-md-12">
              <input class="form-control" type="text" hidden formControlName="productId" [value]="product._id" #productId/>
-            <div class="col-md-3 form-group">
-              <img [src]="this.product?.productImageName"  (click)="getProduct(viewProductForm,productId)" style="width: 90px; height: 145px;" />
-            </div>
-
-            <div class="col-md-3 form-group">
-              {{product.productName}}
-            </div>
-
-            <div class="col-md-3 form-group">
-              {{product.price}}
-            </div>
-
-            <div class="col-md-3 form-group">
-              {{product.sizeDescription}}
-            </div>
-
+             <mat-card class="example-card" >
+              <img [src]="this.product?.productImageName"  mat-card-image class="image"  />
+           </mat-card>
           </div>
         </div>
+      <div class="col-md-8">
+<h1>test</h1>
       </div>
+    </div>
+    
+
     </div>
   </div>
 </form>
+

@@ -1,0 +1,30 @@
+@media screen and (max-width: 600px) {
+    .image{
+        height:100px;
+        width: 100px;
+        margin-bottom: 15px;
+      
+    }
+    .example-card{
+        height:100px;
+        width: 100px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .image{
+        height:100px;
+        width: 100px;
+        margin-bottom: 15px;
+    }
+    .example-card{
+        height:100px;
+        width: 100px;
+        
+    }
+}
+
+.mat-card:hover
+{
+  border:1px solid black;
+}

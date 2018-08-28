@@ -1,19 +1,24 @@
 <form [formGroup]="viewCatalogForm" novalidate style="padding-top:60px; margin-bottom:100px">
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
 
-      <div class="col-md-4  mx-auto" *ngFor="let catalog of catalogs">
+      <div class="col-md-3 column p-2 images "   *ngFor="let catalog of catalogs">
         <input class="form-control" type="text" hidden formControlName="catId" [value]="catalog._id" #catalogId>
         <a >
-          <mat-card class="example-card">
+          <mat-card class="example-card" >
             <img [src]="this.catalog?.catalogImageName"  class="image" mat-card-image (click)="getProduct(viewCatalogForm,catalogId)"
             />
           </mat-card>
         </a>
-        {{catalog.catalogName}}<br>
-        <button mat-raised-button color="accent"  style="margin-right:20px" (click)="getProduct(viewCatalogForm,catalogId)">View Products</button>
+        <div class="col-md-12  column p-2  desc" > {{catalog.catalogName}}</div>
+        <div class="col-md-12 column p-2">1 set =  {{catalog.capacity}} pieces</div>
+        <div class="col-md-12 column p-2 price"> ₹{{catalog.products.price}} /piece</div>
+        
+       <div class="row btn"  >
+        <button mat-raised-button color="accent"   (click)="getProduct(viewCatalogForm,catalogId)">View Products</button>
         <button mat-raised-button color="accent" >Share</button>
-        <!-- <input mat-raised-button type="submit" mat-button class="btn btn-success" value="share"> -->
+      </div>
+       
       </div>
     </div>
   </div>
