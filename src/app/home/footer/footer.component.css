@@ -1,7 +1,7 @@
 .footerMenu li a
 {
     text-decoration:none;
-    color: #5273ba;
+    color: #296A9C;
     font-weight: bold;
 }
 .footerMenu li a:hover
@@ -9,7 +9,7 @@
 color:#570015;
 }
 .socialMedia div a{
-    color:#5273ba;
+    color:#296A9C;
 }
 .socialMedia div a:hover{
     color:#570015;
