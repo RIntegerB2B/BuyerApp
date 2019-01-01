@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject  } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators, NgForm } from '@angular/forms';
 import { AccountService } from '../account.service';
 import { Router } from '@angular/router';
-import { Registration} from './registration.model'
+import { Registration} from './registration.model';
 import { trigger, style, animate, transition } from '@angular/animations';
 import {state} from '@angular/animations';
 import { mobileNumber } from './validation';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -34,13 +35,15 @@ import { mobileNumber } from './validation';
   ]
 })
 export class RegistrationComponent implements OnInit {
-
   buyerRegisterForm: FormGroup;
   userModel: Registration;
   userTypes = ['Agent', 'Retailer', 'Wholesaler', 'Distributor', 'Others'];
   /* public state = 'inactive'; */
 
-  constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router) { }
+  constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router,
+    public dialogRef: MatDialogRef<RegistrationComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+    ) { }
 
   ngOnInit() {
     this.buyerRegister();
@@ -58,8 +61,12 @@ export class RegistrationComponent implements OnInit {
       userType: ['']
     });
   }
+  cancelReg() {
+    this.dialogRef.close();
+  }
   buyerSubmit(buyerRegisterForm: FormGroup) {
     // TODO: Change the userModel variable to pwdChangeReset
+    this.dialogRef.close();
     this.userModel = new Registration(
       buyerRegisterForm.controls.name.value,
       buyerRegisterForm.controls.mobileNumber.value,
@@ -67,8 +74,8 @@ export class RegistrationComponent implements OnInit {
       buyerRegisterForm.controls.userType.value
     );
     this.accountService.registration(this.userModel).subscribe(data => {
-      const value = data._body;
-      if (value.indexOf('1')) {
+      const value = JSON.parse(data._body);
+      if (value.result = 1) {
         // The Update is success so navigate to Login page
         this.router.navigate(['/thanks']);
       }

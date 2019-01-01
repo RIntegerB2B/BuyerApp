@@ -27,7 +27,7 @@ import { SignInComponent } from './account/sign-in/sign-in.component';
 import { PwdChangeRequestComponent } from './account/pwd-change-request/pwd-change-request.component';
 import { PwdChangeResetComponent } from './account/pwd-change-reset/pwd-change-reset.component';
 import { SubProductComponent } from './product/sub-product/sub-product.component';
-
+import {MatDialogModule} from '@angular/material/dialog';
 import { CatalogComponent } from './product/catalog/catalog.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { ThanksComponent } from './home/thanks/thanks.component';
@@ -54,6 +54,7 @@ import { SubProductViewComponent } from './product/sub-product-view/sub-product-
   imports: [
     BrowserModule,
     FlexLayoutModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatIconModule,
@@ -76,7 +77,7 @@ import { SubProductViewComponent } from './product/sub-product-view/sub-product-
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [AccountService, ProductService, NavHeaderService],
+  providers: [ProductService, NavHeaderService, AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,11 @@
 <div class="container-fluid banner">
   <div>
-    <video width="100%" height="auto" preload="metadata" 
-    loop = "true"
-    autoplay="true">
+    <video width="100%" height="auto" 
+    [autoplay]="true">
       <source src="./../../assets/images/lencott.mp4" type="video/mp4">
     </video>
   </div>
-  <div class="pointer mt-2" [routerLink]="['/registration']">
+  <div class="pointer mt-2" (click)="registerDialog()">
     <img class="img-fluid register" src="./../../assets/images/register.jpg" alt="third slide" width="100%">
   </div>
 </div>
@@ -20,10 +19,10 @@
   </div>
 </div>
 <carousel [showIndicators]="false">
-  <slide>
+  <slide class="pointer"  (click)="registerDialog()">
     <img class="img-fluid" src="./../../assets/images/1.jpg" alt="first slide" width="100%">
   </slide>
-  <slide>
+  <slide class="pointer" (click)="registerDialog()">
     <img class="img-fluid" src="./../../assets/images/2.jpg" alt="second slide" width="100%">
   </slide>
 </carousel>

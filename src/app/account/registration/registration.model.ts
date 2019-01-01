@@ -8,12 +8,11 @@ export class Registration {
         mobileNumber: Number,
         location: String,
         userType: String
-        )
-        {
-            this.name=name;
-            this.mobileNumber=mobileNumber;
-            this.location=location;
-            this.userType=userType;
-            
+        )         {
+            this.name = name;
+            this.mobileNumber = mobileNumber;
+            this.location = location;
+            this.userType = userType;
+
         }
 }

@@ -11,6 +11,7 @@ import { Registration } from './registration/registration.model';
 import { PwdChangeRequestComponent } from './pwd-change-request/pwd-change-request.component';
 import { PwdChangeReset } from './pwd-change-reset/pwd-change-reset.model';
 
+
 @Injectable({
     providedIn: 'root'
 })
